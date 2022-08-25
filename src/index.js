@@ -1,4 +1,5 @@
 const { productsRouter } = require('../routers/productsRouter');
+const { restaurantsRouter } = require('../routers/restaurantsRouter')
 const express = require('express');
 require('dotenv').config();
 
@@ -8,6 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/products', productsRouter);
+app.use('/restaurants', restaurantsRouter);
 
 app.get('/', (_req, res) => {
     res.status(200).json('api no ar');
