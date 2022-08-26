@@ -17,6 +17,12 @@ const modelsRestaurants = {
        const [restaurant] = await db.query(SQL_POST_RESTAURANT, [photo, name, addres]);
        return restaurant;
     },
+    putRestaurant: async (id, body) => {
+       const { photo, name, addres } = body;
+       const SQL_PUT_RESTAURANT = 'UPDATE goomer.restaurants SET photo=?, name=?, addres=? WHERE id=?'
+       const [,updated] = await db.query(SQL_PUT_RESTAURANT, [photo, name, addres, id]);
+       return updated;
+    },
 };
 
 module.exports = { modelsRestaurants };

@@ -1,5 +1,6 @@
 const { servicesRestaurants } = require('../services/servicesRestaurants'); 
 const { restaurantValidation } = require('../middlewares/restaurantsValidation');
+const { number } = require('joi');
 
 const controllerRestaurants = {
     getRestaurants: async (req, res) => {
@@ -20,6 +21,16 @@ const controllerRestaurants = {
         return next(error);
       }
     },
+    putRestaurant: async (req, res, next) => {
+      const { id } = req.params;
+      try {
+        const body = await restaurantValidation(req.body);
+        await servicesRestaurants.putRestaurant(Number(id), body);
+        return res.status(202).json('restaurant updated sucessfully');
+      } catch (error) {
+        return next(error);
+      }
+    }, 
 };
 
 module.exports = { controllerRestaurants }

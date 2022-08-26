@@ -13,6 +13,10 @@ const servicesRestaurants = {
         const restaurant = await modelsRestaurants.postRestaurant(body);
         return restaurant;
     },
+    putRestaurant: async (id, body) => {
+        const updated = await modelsRestaurants.putRestaurant(id, body);
+        return updated;
+    },
 };
 
 module.exports = { servicesRestaurants };
