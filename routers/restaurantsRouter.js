@@ -13,4 +13,7 @@ restaurantsRouter.post('/', controllerRestaurants.postRestaurant);
 // ROTA PUT
 restaurantsRouter.put('/:id', controllerRestaurants.putRestaurant);
 
+// ROTA DELETE
+restaurantsRouter.delete('/:id', controllerRestaurants.deleteRestaurant);
+
 module.exports = { restaurantsRouter }

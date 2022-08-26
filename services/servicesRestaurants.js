@@ -17,6 +17,9 @@ const servicesRestaurants = {
         const updated = await modelsRestaurants.putRestaurant(id, body);
         return updated;
     },
+    deleteRestaurant: async (id) => {
+        await modelsRestaurants.deleteRestaurant(id);
+    },
 };
 
 module.exports = { servicesRestaurants };

@@ -23,6 +23,10 @@ const modelsRestaurants = {
        const [,updated] = await db.query(SQL_PUT_RESTAURANT, [photo, name, addres, id]);
        return updated;
     },
+    deleteRestaurant: async (id) => {
+        const SQL_DELETE_RESTAURANT = 'DELETE FROM goomer.restaurants WHERE id=?';
+        await db.query(SQL_DELETE_RESTAURANT, [id]);
+    },
 };
 
 module.exports = { modelsRestaurants };

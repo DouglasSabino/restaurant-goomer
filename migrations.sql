@@ -16,7 +16,7 @@ CREATE TABLE products(
   price INTEGER NOT NULL,
   category VARCHAR(50) NOT NULL,
   id_restaurants INTEGER NOT NULL,
-  FOREIGN KEY (id_restaurants) REFERENCES restaurants (id)
+  FOREIGN KEY (id_restaurants) REFERENCES restaurants (id) ON DELETE CASCADE
 );
 
 insert into products (photo, name, price, category, id_restaurants) values ("https://github.com/goomerdev/job-dev-backend-interview/raw/master/media/logo-azul.png", "coca-cola",12, "bebidas",2)
