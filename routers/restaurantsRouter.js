@@ -7,4 +7,7 @@ const restaurantsRouter = express.Router();
 restaurantsRouter.get('/', controllerRestaurants.getRestaurants);
 restaurantsRouter.get('/:id', controllerRestaurants.getRestaurantsById);
 
+// ROTA POST
+restaurantsRouter.post('/', controllerRestaurants.postRestaurant)
+
 module.exports = { restaurantsRouter }

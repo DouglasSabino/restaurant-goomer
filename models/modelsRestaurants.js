@@ -11,6 +11,12 @@ const modelsRestaurants = {
        const [restaurant] = await db.query(SQL_GET_RESTAURANT, [id]);
        return restaurant;
     },
+    postRestaurant: async (body) => {
+       const { photo, name, addres } = body;
+       const SQL_POST_RESTAURANT = 'INSERT INTO goomer.restaurants (photo, name, addres) VALUES (?, ?, ?);';
+       const [restaurant] = await db.query(SQL_POST_RESTAURANT, [photo, name, addres]);
+       return restaurant;
+    },
 };
 
 module.exports = { modelsRestaurants };
