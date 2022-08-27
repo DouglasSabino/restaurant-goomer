@@ -6,6 +6,7 @@ const restaurantsRouter = express.Router();
 // ROTAS GET
 restaurantsRouter.get('/', controllerRestaurants.getRestaurants);
 restaurantsRouter.get('/:id', controllerRestaurants.getRestaurantsById);
+restaurantsRouter.get('/product/:id', controllerRestaurants.getProductsByRestaurant);
 
 // ROTA POST
 restaurantsRouter.post('/', controllerRestaurants.postRestaurant);

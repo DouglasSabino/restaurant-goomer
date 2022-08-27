@@ -20,6 +20,10 @@ const servicesRestaurants = {
     deleteRestaurant: async (id) => {
         await modelsRestaurants.deleteRestaurant(id);
     },
+    getProductsByRestaurant: async (id) => {
+        const products = await modelsRestaurants.getProductsByRestaurant(id);
+        return products;
+    },
 };
 
 module.exports = { servicesRestaurants };

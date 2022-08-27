@@ -47,6 +47,19 @@ const controllerRestaurants = {
       }catch (error) {
         return next(error);
       }
+    },
+    /** @type {import('express').RequestParamHandler} */
+    getProductsByRestaurant: async (req, res, next) => {
+      const { id } = req.params;
+      try {
+        const restaurant = await servicesRestaurants.getRestaurantsById(Number(id));
+        if (restaurant.length === 0) return next('RESTAURANT_NOT_EXIST');
+        const products = await servicesRestaurants.getProductsByRestaurant(Number(id));
+        if (products.length === 0) return next('RESTAURANT_NOT_HAVE_PRODUCTS');
+        return res.status(200).json(products);
+      } catch (error) {
+        next(error);
+      }
     }, 
 };
 

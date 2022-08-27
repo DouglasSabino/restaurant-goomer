@@ -24,8 +24,13 @@ const modelsRestaurants = {
        return updated;
     },
     deleteRestaurant: async (id) => {
-        const SQL_DELETE_RESTAURANT = 'DELETE FROM goomer.restaurants WHERE id=?';
-        await db.query(SQL_DELETE_RESTAURANT, [id]);
+      const SQL_DELETE_RESTAURANT = 'DELETE FROM goomer.restaurants WHERE id=?';
+      await db.query(SQL_DELETE_RESTAURANT, [id]);
+    },
+    getProductsByRestaurant: async (id) => {
+      const SQL_GET_PRODUCTS_BY_RESTAURANT = 'SELECT * FROM goomer.products WHERE id_restaurant=?';
+      const [products] = await db.query(SQL_GET_PRODUCTS_BY_RESTAURANT, [id]);
+      return products;
     },
 };
 

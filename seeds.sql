@@ -1,14 +1,26 @@
 /* INSERÇÕES NA TABELA DOS RESTAURANTES */
 INSERT INTO restaurants (photo, name, addres) VALUES (
-  'https://www.creativefabrica.com/pt/product/restaurant-logo-338/', 'restaurant 1', 'Rua Serra da Prata 480' 
+  'https://www.creativefabrica.com/pt/product/restaurant-logo-338/', 
+  'restaurant 1', 
+  'Rua Serra da Prata 480' 
 );
 
 INSERT INTO restaurants (photo, name, addres) VALUES (
-  'https://www.creativefabrica.com/pt/product/minimalist-restaurant-logo-7/', 'restaurant 2', 'Rua ibitiranga 318' 
+  'https://www.creativefabrica.com/pt/product/minimalist-restaurant-logo-7/', 
+  'restaurant 2', 
+  'Rua ibitiranga 318' 
 );
 
 INSERT INTO restaurants (photo, name, addres) VALUES (
-  'https://www.creativefabrica.com/pt/product/minimalist-restaurant-logo-7/', 'restaurant 3', 'Rua das Giestas 310' 
+  'https://www.creativefabrica.com/pt/product/minimalist-restaurant-logo-7/', 
+  'restaurant 3', 
+  'Rua das Giestas 310' 
+);
+
+INSERT INTO restaurants (photo, name, addres) VALUES (
+  'https://www.creativefabrica.com/pt/product/minimalist-restaurant-logo-7/', 
+  'restaurant 4', 
+  'Rua sem nome' 
 );
 
 /* INSERÇÕES NA TABELA PRODUCTS */
