@@ -5,8 +5,15 @@ const servicesProducts = {
     const products = await modelsProducts.getProducts();
     return products;
   },
+  getProductsById: async (id) => {
+    const product = await modelsProducts.getProductById(id);
+    return product;
+  },
   postProduct: async (body) => {
     await modelsProducts.postProduct(body);
+  },
+  putProduct: async (id, body) => {
+    await modelsProducts.putProduct(id, body);
   },
 };
 

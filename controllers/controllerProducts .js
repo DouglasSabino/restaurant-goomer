@@ -1,5 +1,5 @@
 const { servicesProducts } = require('../services/servicesProducts');
-const { productValidation } = require('../middlewares/productsValidation'); 
+const { productValidation, productValidationById } = require('../middlewares/productsValidation'); 
 
 const controllerProducts = {
     /** @type {import('express').RequestParamHandler} */
@@ -7,15 +7,35 @@ const controllerProducts = {
         const products = await servicesProducts.getProducts();
         return res.status(200).json(products);
     },
+    getProductById: async (id) => {
+      try {
+        const product = await servicesProducts.getProductsById(Number(id));
+        return product
+      } catch (error) {
+        next(error);
+      }
+    },
     /** @type {import('express').RequestParamHandler} */
     postProduct: async (req, res, next) => {
         try {
           const body = await productValidation(req.body)
           await servicesProducts.postProduct(body);
-          return res.status(201).json({ message: "created product sucessfully"});
+          return res.status(201).json({ message: "product created sucessfully"});
         } catch (error) {
           next(error);  
         }
+    },
+    putProduct: async (req, res, next) => {
+      const { id } = req.params;
+      try {
+        const product = await controllerProducts.getProductById(Number(id));
+        if (!product) return next('PRODUCT_NOT_EXIST');
+        const body = await productValidationById(req.body);
+        await servicesProducts.putProduct(id, body);
+        return res.status(200).json({ message: "Product updated sucessfully" });
+      } catch (error) {
+        next(error);
+      }
     },
 };
 

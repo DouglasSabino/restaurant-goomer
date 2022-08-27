@@ -7,6 +7,9 @@ const productsRouter = express.Router();
 productsRouter.get('/', controllerProducts.getProducts);
 
 // ROTA POST
-productsRouter.post('/', controllerProducts.postProduct)
+productsRouter.post('/', controllerProducts.postProduct);
+
+// ROTA PUT
+productsRouter.put('/:id', controllerProducts.putProduct);
 
 module.exports = { productsRouter };
