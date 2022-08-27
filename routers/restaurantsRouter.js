@@ -3,7 +3,7 @@ const { controllerRestaurants } = require('../controllers/controllerRestaurants'
 
 const restaurantsRouter = express.Router();
 
-// ROTAS GET
+// ROTAS GET'S
 restaurantsRouter.get('/', controllerRestaurants.getRestaurants);
 restaurantsRouter.get('/:id', controllerRestaurants.getRestaurantsById);
 restaurantsRouter.get('/product/:id', controllerRestaurants.getProductsByRestaurant);
