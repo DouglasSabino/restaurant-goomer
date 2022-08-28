@@ -18,5 +18,6 @@
 * MSC 
 * JOI
 * dotenv
+* conventional commit
 
 #### desafio* = https://github.com/goomerdev/job-dev-backend-interview
