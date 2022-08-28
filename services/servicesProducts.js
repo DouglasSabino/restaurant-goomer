@@ -15,6 +15,9 @@ const servicesProducts = {
   putProduct: async (id, body) => {
     await modelsProducts.putProduct(id, body);
   },
+  deleteProduct: async (id) => {
+    await modelsProducts.deleteProduct(id);
+  },
 };
 
 module.exports = { servicesProducts }

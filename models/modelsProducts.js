@@ -20,7 +20,11 @@ const modelsProducts = {
     const { photo, name, price, category } = body;
     const SQL_PUT_PRODUCT = "UPDATE goomer.products SET photo=?, name=?, price=?, category=? WHERE id=?";
     await db.query(SQL_PUT_PRODUCT, [photo, name, price, category, id]);
-  }
+  },
+  deleteProduct: async (id) => {
+    const SQL_DELETE_PRODUCT = "DELETE FROM goomer.products WHERE id=?";
+    await db.query(SQL_DELETE_PRODUCT, [id]); 
+  },
 };
 
 module.exports = { modelsProducts };

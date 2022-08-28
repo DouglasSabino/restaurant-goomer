@@ -12,4 +12,7 @@ productsRouter.post('/', controllerProducts.postProduct);
 // ROTA PUT
 productsRouter.put('/:id', controllerProducts.putProduct);
 
+// ROTA DELETE
+productsRouter.delete('/:id', controllerProducts.deleteProduct);
+
 module.exports = { productsRouter };

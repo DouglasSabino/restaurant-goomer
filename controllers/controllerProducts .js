@@ -37,6 +37,17 @@ const controllerProducts = {
         next(error);
       }
     },
+    deleteProduct: async (req, res, next) => {
+      const { id } = req.params;
+      try {
+        const product = await controllerProducts.getProductById(Number(id));
+        if (product.length === 0) return next('PRODUCT_NOT_EXIST');
+        await servicesProducts.deleteProduct(Number(id));
+        return res.status(204).end();
+      } catch (error) {
+        next(error);
+      }
+    },
 };
 
 module.exports = { controllerProducts };
