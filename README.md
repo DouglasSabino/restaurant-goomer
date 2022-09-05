@@ -16,6 +16,7 @@
 * NodeJs
 * express
 * MSC 
+* SQL
 * JOI
 * dotenv
 * conventional commit
